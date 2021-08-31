@@ -1,0 +1,19 @@
+<div class="rm-login-container">
+    <div class="animated fadeIn">
+        <div class="rm-login-box">
+            <img src="/assets/img/resto-manager-logo.svg" alt="logo" class="rm-logo">
+            <hr>
+            <form (ngSubmit)="login( f )" #f="ngForm">
+                <span class="text-danger animated fadeIn" *ngIf="f.submitted && f.controls['email'].errors">El correo es obligatorio</span>
+                <input class="input100" type="email" name="email" required email [(ngModel)]="usuario.email" placeholder="Email">
+                <span class="text-danger animated fadeIn" *ngIf="f.submitted && f.controls['password'].errors">Ingresa la contraseña (min: 6 letras)</span>
+                <input class="input100" type="password"  name="password" required minlength="6" [(ngModel)]="usuario.password" placeholder="Password">
+                <div class="rm-chk-container">
+                    <input id="ckb1" type="checkbox" name="remember-me" [(ngModel)]="recuerdame">
+                    <label for="ckb1">Recordar mi usuario</label>
+                </div>
+                <button class="btn-lg btn btn-outline-primary" type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</div>

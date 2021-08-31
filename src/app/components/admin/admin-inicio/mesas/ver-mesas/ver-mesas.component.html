@@ -1,0 +1,45 @@
+<h1 class="titulo-header">Mesas | <span class="badge bg-dark" *ngIf="datos_restaurante">{{datos_restaurante.nombre}}</span></h1>
+<hr class="barra-header">
+<div class="container-fluid" >
+    <div class="d-flex flex-row-reverse">
+        <div class="p-0 mt-2 mb-3">
+            <button class="btn btn-primary" (click)="crearNuevaMesa()">Crear nueva mesa</button>
+        </div>
+    </div>
+    <div class="card border-dark mb-3" *ngIf="datos_mesas && datos_mesas.length == 0">
+        <div class="card-header">Mesas de {{datos_restaurante.nombre}}</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">Bienvenido!</h5>
+          <p class="card-text">En esta seccion podrás cargar y administrar las mesas de tu restaurante. Comienza creando tu primera mesa</p>
+        </div>
+      </div>
+    <table class="table table-striped" *ngIf="datos_mesas && datos_mesas.length>0">
+        <thead  class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nombre de mesa</th>
+                <th>Numero</th>
+                <th>Estado de la mesa</th>
+                <th>Acciones</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mesa of datos_mesas; index as i">
+            <td>{{i+1}}</td>
+            <td>{{mesa.nombre}}</td>
+            <td>{{mesa.numero}}</td>
+            <td>
+                <span *ngIf="mesa.activa" class="badge bg-success text-white">Activa</span>
+                <span *ngIf="!mesa.activa" class="badge bg-danger text-white">Inactiva</span>
+            </td>
+            <td>
+                <button title="Editar" text-align:center (click)="editarMesa(mesa)" type="button" class="btn btn-primary"><i class="far fa-edit"></i></button>
+            </td>
+            <td>
+                <button  title="Eliminar" (click)="eliminarMesa(mesa)" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<h1 class="titulo-header">Categorias | <span class="badge bg-dark" *ngIf="datos_restaurante">{{datos_restaurante.nombre}}</span></h1>
+<hr class="barra-header">
+<div class="container-fluid" >
+    <div class="d-flex flex-row-reverse">
+        <div class="p-0 mt-2 mb-3">
+            <button class="btn btn-primary" (click)="crearNuevaCategoria()">Crear nueva categoria</button>
+        </div>
+    </div>
+    <div class="card border-dark mb-3" *ngIf="datos_categoria && datos_categoria.length == 0" >
+        <div class="card-header">Categorias de {{datos_restaurante.nombre}}</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">Bienvenido!</h5>
+          <p class="card-text">En esta seccion podrás cargar y administrar las categorias de tu restaurante. Comienza creando tu primer categoria</p>
+        </div>
+      </div>
+      <table class="table table-striped" *ngIf="datos_categoria && datos_categoria.length>0">
+        <thead  class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nombre de la categoria</th>
+                <th>Acciones</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categoria of datos_categoria; index as i">
+            <td>{{i+1}}</td>
+            <td>{{categoria.nombre}}</td>
+            <td>
+                <button title="Editar" text-align:center (click)="editarCategoria(categoria)" type="button" class="btn btn-primary"><i class="far fa-edit"></i></button>
+            </td>
+            <td>
+                <button  title="Eliminar" (click)="eliminarCategoria(categoria)" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

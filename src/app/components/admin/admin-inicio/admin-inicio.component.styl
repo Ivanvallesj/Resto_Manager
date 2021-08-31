@@ -1,0 +1,48 @@
+$eerie-black = #222222;
+$white = #EEEEEE;
+$independence = #4b4e6d;
+$middle-blue-green = #84dcc6;
+$cadet-grey = #95a3b3;
+
+.contenedor-principal
+    position relative
+    width 100vw
+    min-height 100vh
+    background-color $white
+    .contenido-completo
+        width calc(98% - 270px)
+        min-height 100vh
+        margin-left 270px
+    .menu-lateral
+        background-color $eerie-black
+        width 250px
+        height 100vh
+        padding 30px
+        position fixed
+        top 0
+        left 0
+        img
+            filter: invert(100%)
+            cursor pointer
+        hr
+            background-color rgba($cadet-grey,.1)
+        .menu-wrapper
+            list-style none
+            padding 0
+            margin 0
+            .menu-item
+                padding 10px
+                color $cadet-grey
+                cursor pointer
+                border 1px solid transparent
+                &.active
+                    background-color rgba($cadet-grey,.1)
+                    color $cadet-grey
+                    border-bottom 1px solid $cadet-grey
+                i
+                    width 30px
+                &:hover
+                    background-color rgba($cadet-grey,.1)
+                    color $cadet-grey
+                    border-bottom 1px solid $cadet-grey
+                    transition .3s linear

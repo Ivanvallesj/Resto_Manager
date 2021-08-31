@@ -1,0 +1,26 @@
+<div class="contenedor-principal">
+    <div class="menu-lateral">
+        <img [routerLink]="['dashboard']" src="../../../../assets/img/resto-manager-logo.svg" alt="logo">
+        <hr>
+        <ul class="menu-wrapper">
+            <li [routerLink]="['dashboard']" routerLinkActive="active" class="menu-item"><i class="fas fa-home"></i>Inicio</li>
+            <li [routerLink]="['ver-categorias']" routerLinkActive="active" class="menu-item"><i class="fas fa-tags"></i>Categorias</li>
+            <li [routerLink]="['ver-menu']" routerLinkActive="active" class="menu-item"><i class="fab fa-elementor"></i>Menú</li>
+            <li [routerLink]="['ver-mesas']" routerLinkActive="active" class="menu-item"><i class="fas fa-utensils"></i>Mesas</li>
+            <li [routerLink]="['ver-pedidos']" routerLinkActive="active" class="menu-item"><i class="fas fa-hamburger"></i>Pedidos</li>
+            <li [routerLink]="['ver-movimientos']" routerLinkActive="active" class="menu-item"><i class="fas fa-dollar-sign"></i>Movimientos</li>
+        </ul>
+        <hr>
+        <ul class="menu-wrapper">
+            <li [routerLink]="['configuracion']" routerLinkActive="active" class="menu-item"><i class="fas fa-cog"></i>Configuración</li>
+            <li [routerLink]="['cerrar-sesion']" routerLinkActive="active" class="menu-item"><i class="fas fa-power-off"></i>Cerrar sesión</li>
+        </ul>
+    </div>
+    <div class="contenido-completo">
+        <div class="container-fluid pt-5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+    

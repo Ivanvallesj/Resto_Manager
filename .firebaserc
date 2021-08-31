@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "isp20practicas": {
+      "hosting": {
+        "resto-manager": [
+          "isp20practicas"
+        ]
+      }
+    },
+    "misproyectos-55a6d": {
+      "hosting": {
+        "resto-manager": [
+          "misproyectos-55a6d"
+        ]
+      }
+    }
+  }
+}
