@@ -7,6 +7,8 @@ import { MenuService } from 'src/app/services/menu.service';
 import { RestoService } from 'src/app/services/resto.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { CategoriaModel } from 'src/app/interfaces/categoria.model';
+import { ArchivoModel } from 'src/app/models/archivo.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nuevo-menu',
@@ -19,11 +21,9 @@ export class NuevoMenuComponent implements OnInit {
   mensaje : string = '';
   menu : MenuModel = {
     nombre           : "" ,
-    cantPersonas     : "" ,
-    valor            : 0,
     disponibilidad   : true,
     descripcion      : "" ,
-    imagenUrl        : "" ,
+    imagenUrl        : [] ,
     categoria        : "" ,
   }
   listaCategorias! : CategoriaModel[];
@@ -50,10 +50,15 @@ export class NuevoMenuComponent implements OnInit {
       })
     }
   }
+  obtenerRespuestaDeArchivos(event : ArchivoModel[]){
+    this.menu.imagenUrl=event;  
+  }
 
   enviarFormulario(f : NgForm){
 
-    if(f.invalid){ return; }
+    if(f.invalid){ 
+      Swal.fire('Error', 'Te faltan campos obligatorios', 'error')
+      return; }
 
     if(this.menu.id){
       this.menuService.actualizarMenu(this.menu).subscribe(resp => {

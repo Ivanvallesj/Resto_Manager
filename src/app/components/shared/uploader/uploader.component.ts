@@ -23,4 +23,15 @@ export class UploaderComponent implements OnInit {
     this.archivos = this._cs.cargarAFirebase(this.archivos)
     this.emisorDeArchivos.emit(this.archivos)
   }
+  limpiarArchivos(){
+    this.archivos = [];
+  }
+  get progresoFinalizado(){
+    for (let a of this.archivos){
+      if (a.estaSubiendo){
+        return false;
+      }
+    }
+    return true;
+  }
 }

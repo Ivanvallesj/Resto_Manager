@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import { environment } from 'src/environments/environment';
 import{ArchivoModel} from '../models/archivo.model';
 
 @Injectable({
@@ -7,7 +8,7 @@ import{ArchivoModel} from '../models/archivo.model';
 })
 export class CargarArchivosService {
   private carpetaImagenes = '/uploads';
-  constructor() { }
+  constructor() { firebase.default.initializeApp(environment.firebaseConfig) }
   cargarAFirebase(archivos : ArchivoModel[]){
     //subir los archivos a Firebase
     const referenciaAlmacenamiento = firebase.default.storage().ref();

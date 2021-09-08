@@ -41,12 +41,12 @@
        <div class="row mb-3">
         <div class="col-lg-6">
             <sup><i class="fas fa-asterisk"></i></sup><label for="menudescripcion" class="form-label">Descripcción</label>
-            <textarea [(ngModel)]="menu.descripcion" id="menudescripcion" required name="texto" type="text" rows="10" placeholder="Escribe una descripcion del menu" min="1" required class="form-control"></textarea>
+            <textarea required [(ngModel)]="menu.descripcion" id="menudescripcion" required name="texto" type="text" rows="10" placeholder="Escribe una descripcion del menu" min="1" required class="form-control"></textarea>
         </div>
         <div class="col-lg-6">
             <sup></sup><label  class="form-label">Imágenes</label>
             <!--Componente de imagenes--> 
-            <app-uploader></app-uploader>
+            <app-uploader (emisorDeArchivos)="obtenerRespuestaDeArchivos($event)"></app-uploader>
         </div>
        </div> 
         <div class="row">
