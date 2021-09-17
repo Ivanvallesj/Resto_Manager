@@ -17,6 +17,7 @@
         <thead  class="table-dark">
             <tr>
                 <th>#</th>
+                <th>Imagen</th>
                 <th>Nombre del menu</th>
                 <th>Categoria</th>
                 <th>Disponibilidad</th>
@@ -27,6 +28,9 @@
         <tbody>
             <tr *ngFor="let menu of datos_menus; index as i">
             <td>{{i+1}}</td>
+            <td>
+                <img class="thumbnail-menu" [src]="menu.imagenUrl[0].url" [alt]="menu.nombre">
+            </td>
             <td>{{menu.nombre}}</td>
             <td>{{menu.categoria}}</td>
             <td>

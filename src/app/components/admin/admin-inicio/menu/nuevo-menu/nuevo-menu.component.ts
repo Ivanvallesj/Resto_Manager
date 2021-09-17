@@ -62,14 +62,17 @@ export class NuevoMenuComponent implements OnInit {
 
     if(this.menu.id){
       this.menuService.actualizarMenu(this.menu).subscribe(resp => {
-        this.route.navigate(['admin-inicio/ver-menu'])
+        this.irAmenu();
       })
     }else{
       this.menuService.crearMenu(this.menu).subscribe(resp => {
-        this.route.navigate(['admin-inicio/ver-menu'])
+        this.irAmenu();
       })    
     }
 
+  }
+  private irAmenu(){
+    this.route.navigate(['admin-inicio/ver-menu'])
   }
 
 }

@@ -54,11 +54,12 @@ export class AuthService {
   }
 
   estaAutenticado() : boolean {
-    return this.userToken.length > 2;
+    return this.userToken.length > 20;
   }
 
   logOut(){
     localStorage.removeItem('token');
+    localStorage.removeItem('uid_hash');
   }
   
 }

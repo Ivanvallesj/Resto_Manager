@@ -14,7 +14,7 @@ export class ScannerComponent implements OnInit {
   }
 
   scanTable(){
-    this.router.navigateByUrl('/inicio/wkEFIiEVyJ7vSfP7H0NG/1')
+    this.router.navigateByUrl('/inicio/bienvenida/cu8sl9qmjbSTeQVw2Ip38LccqQq1/-MihqHhST52sZT3xgWDt')
   }
 
 }

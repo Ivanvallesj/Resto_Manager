@@ -19,6 +19,8 @@ import { VerCategoriasComponent } from './admin/admin-inicio/categorias/ver-cate
 import { NuevaCategoriasComponent } from './admin/admin-inicio/categorias/nueva-categorias/nueva-categorias.component';
 import { UploaderComponent } from './shared/uploader/uploader.component';
 import { DragdropDirective } from '../directives/dragdrop.directive';
+import { BienvenidaComponent } from './publico/inicio/bienvenida/bienvenida.component';
+import { SeleccionCategoriasComponent } from './publico/inicio/seleccion-categorias/seleccion-categorias.component';
 
 
 
@@ -37,7 +39,9 @@ import { DragdropDirective } from '../directives/dragdrop.directive';
     VerCategoriasComponent,
     NuevaCategoriasComponent,
     UploaderComponent,
-    DragdropDirective
+    DragdropDirective,
+    BienvenidaComponent,
+    SeleccionCategoriasComponent
   ],
   imports: [
     CommonModule,
