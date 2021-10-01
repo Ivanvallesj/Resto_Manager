@@ -1,2 +1,35 @@
 <h1 class="titulo-header">Pedidos | <span class="badge bg-dark" *ngIf="datos_restaurante">{{datos_restaurante.nombre}}</span></h1>
+<table class="table table-striped" > 0">
+    <thead  class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Imagen</th>
+            <th>Nombre del menu</th>
+            <th>Categoria</th>
+            <th>Disponibilidad</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+        <td></td>
+        <td>
+            <img class="thumbnail-menu" />
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+            <span class="badge bg-success text-white">Disponible</span>
+            <span  class="badge bg-danger text-white">No disponible</span>
+        </td>
+        <td>
+            <button  type="button" class="btn btn-primary"><i class="far fa-edit"></i></button>
+        </td>
+        <td>
+            <button  type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+        </td>
+        </tr>
+    </tbody>
+</table>
 <hr class="barra-header">

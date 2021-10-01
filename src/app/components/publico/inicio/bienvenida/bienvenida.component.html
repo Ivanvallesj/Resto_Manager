@@ -1,1 +1,11 @@
-<p>bienvenida works!</p>
+<div class="rm-white-bg">
+    <div class="content-center">
+        <h1 class="titulo-resto" *ngIf="datos_resto"> {{datos_resto.nombre}} </h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, tempora nesciunt ipsam modi ab cupiditate quibusdam similique asperiores illo inventore eligendi delectus numquam consequatur consectetur voluptate sunt soluta. Alias, quidem!</p>
+        <p *ngIf="datos_mesa">Estas en la mesa: {{datos_mesa.nombre}} <br> ¿Cuantas personas hay en tu mesa?</p>
+        <form *ngIf="datos_mesa" #formulario="ngForm" (ngSubmit)="registrarMesa(formulario)">
+            <input required [(ngModel)]="cantidadComensales" class="form-control gordito" placeholder="00" type="number" name="cantidadComensales" id="cantidadComensales" />
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestoData } from 'src/app/models/restaurant.model';
 import { RestoService } from 'src/app/services/resto.service';
+import { MesaModel } from 'src/app/interfaces/mesa.model';
 
 @Component({
   selector: 'app-ver-pedidos',
@@ -11,6 +12,7 @@ export class VerPedidosComponent implements OnInit {
 
   uid_hash: string | null = null;
   datos_restaurante : RestoData = new RestoData();
+  datos_mesa : MesaModel [] = [];
 
   constructor(private restoService : RestoService) { }
 
