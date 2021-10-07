@@ -21,6 +21,7 @@ import { UploaderComponent } from './shared/uploader/uploader.component';
 import { DragdropDirective } from '../directives/dragdrop.directive';
 import { BienvenidaComponent } from './publico/inicio/bienvenida/bienvenida.component';
 import { SeleccionCategoriasComponent } from './publico/inicio/seleccion-categorias/seleccion-categorias.component';
+import { VerMenuCategoriaComponent } from './publico/inicio/ver-menu-categoria/ver-menu-categoria.component';
 
 
 
@@ -41,7 +42,8 @@ import { SeleccionCategoriasComponent } from './publico/inicio/seleccion-categor
     UploaderComponent,
     DragdropDirective,
     BienvenidaComponent,
-    SeleccionCategoriasComponent
+    SeleccionCategoriasComponent,
+    VerMenuCategoriaComponent
   ],
   imports: [
     CommonModule,

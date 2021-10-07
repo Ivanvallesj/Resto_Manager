@@ -25,6 +25,9 @@ export class BienvenidaComponent implements AfterViewInit {
     this.activatedRoute.params.subscribe(params => {
       this.restoId = params.idResto;
       this.mesaId  = params.idMesa;
+      if(!localStorage.getItem('public_uid_hash')){
+        localStorage.setItem('public_uid_hash',this.restoId);
+      }
     })
   }
 

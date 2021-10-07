@@ -1,0 +1,19 @@
+<div class="contenedor-titulo">
+    <h1> {{ parametroCategoria | uppercase}} </h1>
+</div>
+
+<div *ngFor="let item of menu" class="card m-2 rounded">
+    <div class="row">
+        <div class="col-4">
+            <div class="contenedor-imagen" [ngStyle]="{'background-image':'url('+item.imagenUrl[0].url}" >
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="card-text">{{item.descripcion | slice:0:50}}...</p>
+                <p class="card-text"><small class="text-muted">Cant. personas: {{item.cantPersonas}}</small></p>
+            </div>
+        </div>
+    </div>
+</div> 

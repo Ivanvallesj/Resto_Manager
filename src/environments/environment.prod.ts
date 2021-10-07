@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   DB_URL : 'https://misproyectos-55a6d-default-rtdb.firebaseio.com/resto/',
-  DB_NODE : localStorage.getItem('uid_hash'),
+  DB_NODE : localStorage.getItem('uid_hash') ? localStorage.getItem('uid_hash') : localStorage.getItem('public_uid_hash'),
   firebaseConfig : {
     apiKey: "AIzaSyDVqOQtZqHsrxqxp3AqF1AZOWHF9Cpr7u4",
     authDomain: "misproyectos-55a6d.firebaseapp.com",
