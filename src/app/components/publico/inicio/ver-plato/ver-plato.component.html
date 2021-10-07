@@ -1,0 +1,21 @@
+<div class="main-wrapper">
+    <div class="wrapper" *ngIf="!cargando">
+        <div class="img-container animate__animated animate__fadeIn" [ngStyle]="{'background-image':'url('+menu.imagenUrl[0].url+')'}"></div>
+        <div class="gradient-container animate__animated animate__fadeIn"></div>
+        <div class="header-container animate__animated animate__fadeInUp">
+            <h1>{{menu.nombre}}</h1>
+        </div>
+        <div class="content-container animate__animated animate__fadeInUp">
+            <span class="badge bg-info text-light cantidad">Cant. personas: {{menu.cantPersonas}}</span>
+            <p class="card-description mt-2">{{menu.descripcion}}</p>
+            <hr>
+            <div class="form-inputs">
+                <span class="precio">$ {{menu.valor}}</span>
+                <input type="number" placeholder="Cant: 0" name="cantidad" id="cantidad" />
+            </div>
+            <hr>
+            <button type="button" class="btn btn-success btn-block btn-lg">Agregar al pedido</button>
+        </div>
+    </div>
+</div>
+<app-flecha-navegacion></app-flecha-navegacion>

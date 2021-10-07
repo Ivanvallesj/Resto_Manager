@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { MenuModel } from 'src/app/interfaces/menu.model';
 
@@ -13,7 +13,7 @@ export class VerMenuCategoriaComponent implements OnInit {
   parametroCategoria!: string;
   menu: MenuModel[] = [];
 
-  constructor( private _ar: ActivatedRoute, private _ms: MenuService ) {
+  constructor( private _ar: ActivatedRoute, private _ms: MenuService, private router : Router  ) {
 
     this._ar.params.subscribe(parametros => {
       this.parametroCategoria = parametros['id'];
@@ -30,7 +30,8 @@ export class VerMenuCategoriaComponent implements OnInit {
         }
       })
     })
-
   }
-
+  verPlato(item: MenuModel){
+    this.router.navigate(['inicio/ver-plato', item.id])
+  }
 }

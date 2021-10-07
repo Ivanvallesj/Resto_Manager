@@ -22,6 +22,8 @@ import { DragdropDirective } from '../directives/dragdrop.directive';
 import { BienvenidaComponent } from './publico/inicio/bienvenida/bienvenida.component';
 import { SeleccionCategoriasComponent } from './publico/inicio/seleccion-categorias/seleccion-categorias.component';
 import { VerMenuCategoriaComponent } from './publico/inicio/ver-menu-categoria/ver-menu-categoria.component';
+import { VerPlatoComponent } from './publico/inicio/ver-plato/ver-plato.component';
+import { FlechaNavegacionComponent } from './shared/flecha-navegacion/flecha-navegacion.component';
 
 
 
@@ -43,7 +45,9 @@ import { VerMenuCategoriaComponent } from './publico/inicio/ver-menu-categoria/v
     DragdropDirective,
     BienvenidaComponent,
     SeleccionCategoriasComponent,
-    VerMenuCategoriaComponent
+    VerMenuCategoriaComponent,
+    VerPlatoComponent,
+    FlechaNavegacionComponent
   ],
   imports: [
     CommonModule,

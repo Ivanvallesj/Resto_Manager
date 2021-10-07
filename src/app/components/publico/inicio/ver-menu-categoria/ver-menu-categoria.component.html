@@ -1,19 +1,31 @@
+<app-flecha-navegacion></app-flecha-navegacion>
+
 <div class="contenedor-titulo">
     <h1> {{ parametroCategoria | uppercase}} </h1>
 </div>
 
-<div *ngFor="let item of menu" class="card m-2 rounded">
-    <div class="row">
-        <div class="col-4">
-            <div class="contenedor-imagen" [ngStyle]="{'background-image':'url('+item.imagenUrl[0].url}" >
-            </div>
-        </div>
-        <div class="col-8">
-            <div class="card-body">
-                <h5 class="card-title">{{item.nombre}}</h5>
-                <p class="card-text">{{item.descripcion | slice:0:50}}...</p>
-                <p class="card-text"><small class="text-muted">Cant. personas: {{item.cantPersonas}}</small></p>
+<div>
+    <div *ngIf="menu.length > 0">
+        <div *ngFor="let item of menu" class="main-card-container animate__animated animate__fadeInRight" (click)="verPlato(item)">
+            <div class="row">
+                <div class="col-12 contendor-columnas-carta">
+                    <div class="contenedor-imagen" [ngStyle]="{'background-image':'url('+item.imagenUrl[0].url}" >
+                    </div>
+                    <div class="contenedor-texto">
+                        <h5 class="titulo">{{item.nombre}}</h5>
+                        <p class="descripcion">{{item.descripcion | slice:0:80}}...</p>
+                        <p class="info">Cant. personas: {{item.cantPersonas}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div> 
+    
+    <div *ngIf="menu && menu.length == 0">
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+                No hay elementos para elegir en esta sección :'(
+            </div>
+        </div>
+    </div>
+</div>
